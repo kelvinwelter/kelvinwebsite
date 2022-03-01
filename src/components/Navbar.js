@@ -1,5 +1,6 @@
 import React from 'react';
 import { FiGithub, FiLinkedin, FiMail} from 'react-icons/fi';
+import { Link } from 'gatsby';
 import { 
     Button,
     ButtonGroup,
@@ -16,16 +17,24 @@ const Navbar = (props) => (
     >
         <ButtonGroup colorScheme="blackAlpha" variant="ghost" spacing="4">
             <Button>
-                Home
+                <Link to='/'>
+                    Home
+                </Link>
             </Button>
             <Button>
-                Projects
+                <Link to='/projects'>
+                    Projects
+                </Link>
             </Button>
             <Button>
-                Posts
+                <Link to='/posts'>
+                    Posts
+                </Link>
             </Button>
             <Button>
-                About
+                <Link to='/about'>
+                    About
+                </Link>
             </Button>
         </ButtonGroup>
         <Spacer />
