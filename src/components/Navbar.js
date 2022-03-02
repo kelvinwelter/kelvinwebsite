@@ -16,26 +16,26 @@ const Navbar = (props) => (
         {...props}
     >
         <ButtonGroup colorScheme="blackAlpha" variant="ghost" spacing="4">
-            <Button>
-                <Link to='/'>
+            <Link to='/'>
+                <Button>
                     Home
-                </Link>
-            </Button>
-            <Button>
-                <Link to='/projects'>
+                </Button>
+            </Link>
+            <Link to='/projects'>
+                <Button>
                     Projects
-                </Link>
-            </Button>
-            <Button>
-                <Link to='/posts'>
+                </Button>
+            </Link>
+            <Link to='/posts'>
+                <Button>
                     Posts
-                </Link>
-            </Button>
-            <Button>
-                <Link to='/about'>
+                </Button>
+            </Link>
+            <Link to='/about'>
+                <Button>
                     About
-                </Link>
-            </Button>
+                </Button>
+            </Link>
         </ButtonGroup>
         <Spacer />
         <ButtonGroup colorScheme="blackAlpha" variant="ghost" spacing="4">
