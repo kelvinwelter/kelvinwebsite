@@ -110,6 +110,24 @@ const Navbar = (props) => {
                                 </Button>
                             </Link>
                         </ButtonGroup>
+                        <Divider my={2} />
+                        <ButtonGroup flexDirection="column" colorScheme="blackAlpha" variant="ghost" spacing={0}>
+                            <a aria-label='Open Github' href='https://github.com/kelvinwelter'>
+                                <Button leftIcon={<FiGithub />}>
+                                    Github
+                                </Button>
+                            </a>
+                            <a aria-label="Open LinkedIn" href='https://www.linkedin.com/in/kelvinwelter/'>
+                                <Button leftIcon={<FiLinkedin />}>
+                                    LinkedIn
+                                </Button>
+                            </a>
+                            <a aria-label="Send email" href='mailto:kelvinwelter.b@gmail.com'>
+                                <Button leftIcon={<FiMail />}>
+                                    Email
+                                </Button>
+                            </a>
+                        </ButtonGroup>
                     </DrawerBody>
                 </DrawerContent>
             </Drawer>
