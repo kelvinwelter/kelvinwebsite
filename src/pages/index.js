@@ -9,7 +9,7 @@ const IndexPage = () => {
     <Flex as="main" direction="column">
       <Navbar/>
       <Center flexGrow={1}>
-        <Text fontSize="5xl">Hey there! I'm <Text fontSize="6xl" color="blue">Kelvin Welter</Text></Text>
+        <Text textAlign="center" fontSize="5xl">Hey there! I'm <Text fontSize="6xl" color="blue">Kelvin Welter</Text></Text>
       </Center>
     </Flex>
   )
