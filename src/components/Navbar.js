@@ -6,7 +6,7 @@ import {
     ButtonGroup,
     Flex,
     IconButton,
-    Spacer
+    Spacer,
 } from '@chakra-ui/react';
 
 const Navbar = (props) => (
@@ -39,9 +39,9 @@ const Navbar = (props) => (
         </ButtonGroup>
         <Spacer />
         <ButtonGroup colorScheme="blackAlpha" variant="ghost" spacing="4">
-            <IconButton icon={<FiGithub />} />
-            <IconButton icon={<FiLinkedin />} />
-            <IconButton icon={<FiMail />} />
+            <a aria-label='Open Github' href='https://github.com/kelvinwelter'><IconButton icon={<FiGithub />} /></a>
+            <a aria-label="Open LinkedIn" href='https://www.linkedin.com/in/kelvinwelter/'><IconButton icon={<FiLinkedin />} /></a>
+            <a aria-label="Send email" href='mailto:kelvinwelter.b@gmail.com'><IconButton icon={<FiMail />} /></a>
         </ButtonGroup>
     </Flex>
 )
