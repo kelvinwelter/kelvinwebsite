@@ -9,7 +9,7 @@ const BlogPost = ({ data }) => {
     return (
         <Flex as="main" direction="column">
           <Navbar/>
-          <Box p={16} maxW="48rem" flexGrow={1} flexDirection="column" alignSelf="center">
+          <Box p={4} maxW="48rem" flexGrow={1} flexDirection="column" alignSelf="center">
             <Heading as="h1" color="gray.700" textAlign="center">{data.mdx.frontmatter.title}</Heading>
             <Text pb={4} color="gray.500" fontSize="sm" textAlign="center">{data.mdx.frontmatter.date}</Text>
             <MDXStyleProvider>
