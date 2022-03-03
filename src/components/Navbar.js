@@ -27,6 +27,38 @@ import {
     useDisclosure,
 } from '@chakra-ui/react';
 
+const internalLinks = ['Home', 'Projects', 'Posts', 'About'];
+const externalLinks = ['Github', 'LinkedIn', 'Email'];
+
+const iconsMap = {
+    'Home': <FiHome />,
+    'Projects': <FiCode />,
+    'Posts': <FiFile />,
+    'About': <FiUser />,
+    'Github': <FiGithub />,
+    'LinkedIn': <FiLinkedin />,
+    'Email': <FiMail />,
+}
+
+const internalLinksMap = {
+    'Home': '/',
+    'Projects': '/projects',
+    'Posts': '/posts',
+    'About': '/about',
+}
+
+const externalLinksMap = {
+    'Github': 'https://github.com/kelvinwelter',
+    'LinkedIn': 'https://www.linkedin.com/in/kelvinwelter/',
+    'Email': 'mailto:kelvinwelter.b@gmail.com',
+}
+
+const labelsMap = {
+    'Github': 'Open Github',
+    'LinkedIn': 'Open LinkedIn',
+    'Email': 'Send email',
+}
+
 const Navbar = (props) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -53,32 +85,19 @@ const Navbar = (props) => {
                 </Flex>
 
                 <ButtonGroup colorScheme="blackAlpha" variant="ghost" spacing="4" display={{ base: 'none', md: 'inline-flex' }}>
-                    <Link to='/'>
-                        <Button>
-                            Home
-                        </Button>
-                    </Link>
-                    <Link to='/projects'>
-                        <Button>
-                            Projects
-                        </Button>
-                    </Link>
-                    <Link to='/posts'>
-                        <Button>
-                            Posts
-                        </Button>
-                    </Link>
-                    <Link to='/about'>
-                        <Button>
-                            About
-                        </Button>
-                    </Link>
+                    {internalLinks.map((link) => (
+                        <Link to={internalLinksMap[link]}>
+                            <Button>
+                                {link}
+                            </Button>
+                        </Link>    
+                    ))}
                 </ButtonGroup>
                 <Spacer />
                 <ButtonGroup colorScheme="blackAlpha" variant="ghost" spacing="4" display={{ base: 'none', md: 'inline-flex' }}>
-                    <a aria-label='Open Github' href='https://github.com/kelvinwelter'><IconButton icon={<FiGithub />} /></a>
-                    <a aria-label="Open LinkedIn" href='https://www.linkedin.com/in/kelvinwelter/'><IconButton icon={<FiLinkedin />} /></a>
-                    <a aria-label="Send email" href='mailto:kelvinwelter.b@gmail.com'><IconButton icon={<FiMail />} /></a>
+                    {externalLinks.map((link) => (
+                        <a aria-label={labelsMap[link]} href={externalLinksMap[link]}><IconButton icon={iconsMap[link]}/></a>    
+                    ))}
                 </ButtonGroup>
             </Flex>
             <Drawer placement="left" onClose={onClose} isOpen={isOpen}>
@@ -89,44 +108,23 @@ const Navbar = (props) => {
                         <DrawerCloseButton />
                         <Divider my={2} />
                         <ButtonGroup flexDirection="column" colorScheme="blackAlpha" variant="ghost" spacing={0}>
-                            <Link to='/'>
-                                <Button leftIcon={<FiHome />}>
-                                    Home
-                                </Button>
-                            </Link>
-                            <Link to='/projects'>
-                                <Button leftIcon={<FiCode />}>
-                                    Projects
-                                </Button>
-                            </Link>
-                            <Link to='/posts'>
-                                <Button leftIcon={<FiFile />}>
-                                    Posts
-                                </Button>
-                            </Link>
-                            <Link to='/about'>
-                                <Button leftIcon={<FiUser />}>
-                                    About
-                                </Button>
-                            </Link>
+                            {internalLinks.map((link) => (
+                                <Link to={internalLinksMap[link]}>
+                                    <Button leftIcon={iconsMap[link]}>
+                                        {link}
+                                    </Button>
+                                </Link>    
+                            ))}
                         </ButtonGroup>
                         <Divider my={2} />
                         <ButtonGroup flexDirection="column" colorScheme="blackAlpha" variant="ghost" spacing={0}>
-                            <a aria-label='Open Github' href='https://github.com/kelvinwelter'>
-                                <Button leftIcon={<FiGithub />}>
-                                    Github
-                                </Button>
-                            </a>
-                            <a aria-label="Open LinkedIn" href='https://www.linkedin.com/in/kelvinwelter/'>
-                                <Button leftIcon={<FiLinkedin />}>
-                                    LinkedIn
-                                </Button>
-                            </a>
-                            <a aria-label="Send email" href='mailto:kelvinwelter.b@gmail.com'>
-                                <Button leftIcon={<FiMail />}>
-                                    Email
-                                </Button>
-                            </a>
+                            {externalLinks.map((link) => (
+                                <a aria-label={labelsMap[link]} href={externalLinksMap[link]}>
+                                    <Button leftIcon={iconsMap[link]}>
+                                        {link}
+                                    </Button>    
+                                </a>    
+                            ))}
                         </ButtonGroup>
                     </DrawerBody>
                 </DrawerContent>
