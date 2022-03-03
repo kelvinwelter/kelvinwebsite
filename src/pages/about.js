@@ -6,7 +6,7 @@ const AboutPage = () => {
   return (
     <Flex as="main" direction="column">
       <Navbar/>
-      <Center maxW="48rem" flexGrow={1} flexDirection="column" alignSelf="center">
+      <Center maxW="48rem" flexGrow={1} flexDirection="column" alignSelf="center" paddingX={4}>
         <Heading mb={8}>I am always learning, always discovering</Heading>
         <Text mb={4}>
           Hello, I'm Kelvin! I help build fast, elegant, and innovative software. 

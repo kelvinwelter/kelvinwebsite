@@ -8,7 +8,7 @@ const PostsPage = ({ data }) => {
   return (
     <Flex as="main" direction="column">
       <Navbar/>
-      <Center maxW="48rem" flexGrow={1} flexDirection="column" alignSelf="center">
+      <Center maxW="48rem" flexGrow={1} flexDirection="column" alignSelf="center" paddingX={4}>
         <Heading>Posts</Heading>
         {
           data.allMdx.nodes.map((node) => (
