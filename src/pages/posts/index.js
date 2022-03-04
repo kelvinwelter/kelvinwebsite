@@ -22,7 +22,7 @@ const PostsPage = ({ data }) => {
 
 export const query = graphql`
     query getPosts {
-        allMdx(sort: {fields: frontmatter___date, order: DESC}) {
+        allMdx(sort: {fields: frontmatter___date, order: DESC}, filter: {fileAbsolutePath: {regex: "/content/posts/"}}) {
             nodes {
                 frontmatter {
                     date(formatString: "MMMM D, YYYY")
