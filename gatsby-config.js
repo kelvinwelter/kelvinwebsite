@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "kelvinwebsite",
+    siteUrl: "https://www.kelvinwelter.com",
+    title: "kelvin's site",
   },
   plugins: [
     "gatsby-plugin-mdx",
@@ -34,6 +34,16 @@ module.exports = {
         name: `projects`,
         path: `${__dirname}/content/projects`,
       }
+    },
+    {
+      resolve: `gatsby-plugin-umami`,
+      options: {
+        websiteId: 'aebcbc83-6685-4ea3-a1c2-6ac7db63bffa',
+        srcUrl: 'https://umami-indol-zeta.vercel.app/umami.js',
+        includeInDevelopment: false,
+        autoTrack: true,
+        respectDoNotTrack: true
+      },
     },
   ],
 };
